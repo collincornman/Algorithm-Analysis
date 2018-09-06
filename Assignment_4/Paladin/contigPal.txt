@@ -1,0 +1,38 @@
+Input: String s
+Output: The longest contiguous palindromic sequence
+
+reverse(s)
+	rev = ""
+	FOR each character in s DO
+		add character to begining of rev
+	END
+	return rev
+
+
+longCont(s)
+	n = length of s
+	matrix = (n x n) matrix filled with 0 at all indices
+	i = 0
+	WHILE n > 0 DO
+		table(i,i) = True
+		i = i+1
+	END
+	max = 0
+	FOR i = 0,....,n DO
+		j = 0
+		WHILE j < (n-i +1) DO
+			k = j+i-1
+			IF table(j+1,k-1) and s(j) is equal to s(k) THEN
+				table(j,k) = True
+				IF i > max THEN
+					begin = j
+					max = i
+				END
+			END
+			j = j + 1
+		END
+		i = i + 1
+	END
+	output s(begin,...,max+1)
+		
+		

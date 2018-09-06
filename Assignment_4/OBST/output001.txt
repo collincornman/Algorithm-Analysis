@@ -1,0 +1,45 @@
+C =
+[ 0.000 0.413 0.423 0.568 1.043 1.880]
+[ 0.000 0.000 0.005 0.080 0.355 0.942]
+[ 0.000 0.000 0.000 0.070 0.340 0.922]
+[ 0.000 0.000 0.000 0.000 0.200 0.712]
+[ 0.000 0.000 0.000 0.000 0.000 0.312]
+[ 0.000 0.000 0.000 0.000 0.000 0.000]
+
+R =
+[ 0 0 0 0 3]
+[ 0 1 2 3 4]
+[ 0 0 2 3 4]
+[ 0 0 0 3 4]
+[ 0 0 0 0 4]
+
+Node
+   Key: C
+   Probability: 41.30%
+   Parent: V
+   Left Child:None
+   Right Child: K
+Node
+   Key: D
+   Probability: 0.50%
+   Parent: K
+   Left Child:None
+   Right Child: None
+Node
+   Key: K
+   Probability: 7.00%
+   Parent: C
+   Left Child:D
+   Right Child: None
+Node
+   Key: V
+   Probability: 20.00%
+   Parent: (null)
+   Left Child:C
+   Right Child: Y
+Node
+   Key: Y
+   Probability: 31.20%
+   Parent: V
+   Left Child:None
+   Right Child: None

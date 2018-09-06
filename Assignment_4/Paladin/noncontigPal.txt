@@ -1,0 +1,54 @@
+Input: String s
+Output: Longest Noncontiguous Subsequence of s
+
+reverse(s)
+	rev = ""
+	FOR each character in s DO
+		add character to begining of rev
+	END
+	return rev
+
+n = length of s
+r = reverse(s)
+
+findPal(string, reverse, n)
+	matrix = build (n+1 x n+1) matrix with 0 at each indices
+	root = build (n+1 x n+1) mamtrix with 0 at each indices
+	
+	FOR i = 1,....,n+1 DO
+		FOR j = 1,.....,n+1 DO
+			IF string[i-1] is equal to reverse[j-1] THEN
+				matrix(i,j) = matrix(i-1,j-1)+1
+				root(i,j) = a value to indicate a diagonal movement
+			END
+			ELSE
+				IF matrix(i-1,j) is greater than matrix(i,j-1) THEN
+					matrix(i,j) = matrix(i-1,j)
+					root(i,j) = a value to indicate an upward movement
+				END
+				ELSE	
+					matrix(i,j) = matrix(i,j-1)
+					root(i,j) = a value to indicate a left movement
+				END
+			END
+		END
+	END
+	
+	e = ""
+	a,b is equal to n
+	WHILE a and b > 0 DO
+		IF root at (a,b) is the diagonal value THEN
+			add string at a-1 to e
+			a = a-1
+			b = b-1
+		END
+		ELSE IF root at (a,b) is the upward value THEN
+			a = a-1
+		END
+		ELSE	
+			b = b-1
+		END
+	END
+	output e
+
+	
